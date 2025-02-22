@@ -4,7 +4,7 @@ Para validar certificados digitales, se emplean algoritmos de clave pública com
 
 ##  🔐 1. Validación con RSA
 
-**RSA (Rivest-Shamir-Adleman)** es un algoritmo de cifrado asimétrico ampliamente utilizado para firmar y validar certificados digitales. Funciona con un par de claves:
+**RSA (Rivest-Shamir-Adleman):** RSA es un algoritmo de cifrado asimétrico ampliamente utilizado para firmas digitales y seguridad en comunicaciones. Fue desarrollado en 1977 por Ron Rivest, Adi Shamir y Leonard Adleman, y se basa en la dificultad de factorizar números primos grandes, lo que lo hace altamente seguro.
 
 Clave privada (para firmar)
 
@@ -132,7 +132,40 @@ Si alguien modifica documento.txt, generamos el nuevo hash y lo comparamos con e
 Estos algoritmos combinados permiten validar certificados de manera segura.
 
 
-##### Espero estos cortos ejemplos ¡Te ayuden a comprender cómo funciona la validación de certificados digitales en la práctica! 🚀
+##### 🎯 ¿Dónde se usa RSA (Rivest-Shamir-Adleman)?
+
+📜 Firmas Digitales y Certificados Electrónicos
+🔑 Autenticación en Sistemas y Dispositivos
+🔐 Cifrado de Datos y Comunicaciones Seguras
+
+RSA es un pilar en la seguridad informática moderna. Su uso en firmas digitales, cifrado de datos, autenticación y blockchain garantiza privacidad y confianza en sistemas críticos. Sin embargo, es más lento que otros métodos modernos como ECC (Elliptic Curve Cryptography), por lo que en algunos casos se prefiere ECDSA. 🚀
+
+
+##### 🎯 ¿Dónde se usa ECDSA (Elliptic Curve Digital Signature Algorithm)?
+
+🔑 Bitcoin y criptomonedas: Para firmar transacciones.
+
+🔐 TLS/SSL (HTTPS): Para conexiones seguras en navegadores web.
+
+📜 SSH: Para autenticación en servidores.
+
+📱 Dispositivos IoT: Gracias a su eficiencia en consumo de recursos.
+
+ **ECDSA** es preferido en sistemas modernos por su seguridad con claves más cortas y su eficiencia en comparación con RSA. 🚀
+
+
+##### 🎯 ¿Dónde se usan los SHA-?
+
+🔐 Almacenamiento Seguro de Contraseñas
+
+🔑 Verificación de Integridad de Archivos
+
+📜  Protocolos de Seguridad (TLS, VPN, SSH)
+
+Las funciones **SHA-256, SHA-384 y SHA-512** son fundamentales en seguridad informática. Se usan en firmas digitales, almacenamiento de contraseñas, blockchain, verificación de archivos y protocolos de seguridad. Son herramientas esenciales para garantizar la integridad y autenticidad de los datos en la era digital. 🚀
+
+
+##### "Espero estos cortos ejemplos ¡Te ayuden a comprender cómo funciona la validación de certificados digitales en la práctica!" 🚀
 
 ---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
