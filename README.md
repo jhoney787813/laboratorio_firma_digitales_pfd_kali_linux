@@ -14,4 +14,12 @@ Firmar digitalmente un documento garantiza:
 
 
 
+Este laboratorio demostrará cómo firmar un documento PDF usando herramientas disponibles en Kali Linux, como gpg y openssl.
+[-> Ver Laboratorio Paso a Paso ](https://github.com/jhoney787813/laboratorio_firma_digitales_pfd_kali_linux/blob/main/laboratorio_paso_a_paso.md)
+
+
+🌐 ¿Sabías que la autentiticidad de tus archivos es importate para detectar fraudes? En este video, aplicaremos mecanismos de firma de documentos electronicos, utilizados hoy en día por muchas industrias para garantizar la integridad y autenticidad de los archivos. 💻
+[-> Video Completo de práctica](https://www.youtube.com/watch?v=Gt7tuk75hMI)
+
+---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
