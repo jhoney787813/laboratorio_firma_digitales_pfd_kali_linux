@@ -136,13 +136,16 @@ Se validan verificando la firma de la autoridad certificadora, la fecha de expir
 
 🔹 Los algoritmos más comunes son:
 
+
 ✔ RSA (Rivest-Shamir-Adleman)
 
 ✔ ECDSA (Elliptic Curve Digital Signature Algorithm)
 
 ✔ SHA-256, SHA-384, SHA-512 (para la función hash)
 
-[🔎 Ver-> Explicación, Practica para cada algoritmo]()
+[🔎 Ver-> Explicación, Practica para cada algoritmo](https://github.com/jhoney787813/laboratorio_firma_digitales_pfd_kali_linux/blob/main/practica_algoritmos_clave_publica.md)
+
+
 
 
 ## Conclusión
