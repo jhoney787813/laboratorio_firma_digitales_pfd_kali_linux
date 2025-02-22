@@ -1,15 +1,19 @@
 🔬 Laboratorio: Firma Digital de un PDF en Kali Linux
 Este laboratorio demostrará cómo firmar un documento PDF usando herramientas disponibles en Kali Linux, como gpg y openssl.
 
-🛠 Requisitos previos
+# 🛠 Requisitos previos
+
 Antes de comenzar, asegúrate de que tienes instalado:
+
 ✅ Kali Linux (o cualquier otra distribución basada en Debian)
+
 ✅ GnuPG (GPG) para la gestión de claves
+
 ✅ LibreOffice (opcional) para la creación del PDF
 
 
 
-📚 Preguntas y Respuestas
+# 📚 Preguntas y Respuestas
 
 ### 📌 ¿Qué garantiza el uso de firmar un documento?
 
