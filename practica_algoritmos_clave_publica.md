@@ -61,8 +61,43 @@ Si el documento fue modificado la **verificación fallara!**
 
 ECDSA es una variante de firma digital basada en criptografía de curvas elípticas. Es más eficiente que RSA porque ofrece la misma seguridad con claves más pequeñas.
 
+### 📌 Ejemplo práctico: Crear y validar una firma con ECDSA
+
+#### Paso 1: Generar un par de claves ECDSA
+
+Generamos una clave privada con curva elíptica **secp256k1**:
+
+```bash
+  openssl ecparam -name secp256k1 -genkey -noout -out ecdsa_priv.pem
+  openssl ec -in ecdsa_priv.pem -pubout -out ecdsa_pub.pem
+```
+
+. **ecdsa_priv.pem:** clave privada
+
+. **ecdsa_pub.pem:** clave pública
 
 
+
+#### Paso 2: Firmar el documento con ECDSA
+
+```bash
+  openssl dgst -sha256 -sign ecdsa_priv.pem -out firma_ecdsa.bin documento.txt
+```
+
+La salida del comando anterior es un archivo, con la firma digital **firma_ecdsa.bin**.
+
+#### Paso 3: Verificar la firma
+
+```bash
+  openssl dgst -sha256 -verify ecdsa_pub.pem -signature firma_ecdsa.bin documento.txt
+```
+
+Si la salida anterior es exitosa saldra:
+
+```bash
+    Verified OK
+```
+Si el documento fue modificado la **verificación fallara!**
 
 ---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
