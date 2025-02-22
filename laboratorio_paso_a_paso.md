@@ -167,7 +167,7 @@ RSA es un pilar en la seguridad informática moderna. Su uso en firmas digitales
 
 ✔ **SHA-256, SHA-384, SHA-512 (para la función hash):** permiten garantizar la integridad del documento.
 
-##### 🎯 ¿Dónde se usa SHA-?
+##### 🎯 ¿Dónde se usan los SHA-?
 
 🔐 Almacenamiento Seguro de Contraseñas
 
