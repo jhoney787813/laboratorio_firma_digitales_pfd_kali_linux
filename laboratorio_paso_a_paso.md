@@ -158,5 +158,5 @@ El uso de firmas digitales y certificados garantiza la seguridad de los document
 2. **Zimmermann, P.** (1995). *The Official PGP User's Guide*. MIT Press.
 3. **OpenSSL Foundation.** (2024). OpenSSL Cryptography and SSL/TLS Toolkit. Recuperado de [OpenSSL](https://www.openssl.org)
 
-
+---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
