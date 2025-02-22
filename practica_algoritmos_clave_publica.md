@@ -98,6 +98,5 @@ Si la salida anterior es exitosa saldra:
     Verified OK
 ```
 Si el documento fue modificado la **verificación fallara!**
-
 ---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
