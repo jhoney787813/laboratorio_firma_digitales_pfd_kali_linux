@@ -1,4 +1,4 @@
-# 🔬 Laboratorio: Firma Digital de un PDF en Kali Linux
+# 🔬 Laboratorio: Firma Digital de un PDF con Kali Linux
 
 Este laboratorio demostrará cómo firmar un documento PDF usando herramientas disponibles en Kali Linux, como gpg y openssl. 
 
