@@ -3,7 +3,7 @@ Este laboratorio demostrará cómo firmar un documento PDF usando herramientas d
 
 ## **Universidad Politécnico Grancolombiano**  
 **Especialización en Seguridad de la Información**  
-**Materia:** Criptografía simétrica  
+**Materia:** Criptografía Asimétrica  
 **Docente:** José Alfonso Valencia Rodríguez  
 **Autor:** Jhon Edison Hincapié  
 **Año:** 2025  
