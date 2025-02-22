@@ -22,6 +22,6 @@ Este laboratorio demostrará cómo firmar un documento PDF usando herramientas d
 [-> Video Completo de práctica](https://youtu.be/0KUAuPT0T2w)
 
 
- ![perrito](https://github.com/user-attachments/assets/65668f71-ad48-41ff-8678-b942d417f687)
+ ![bannerFirmaDigital_new](https://github.com/user-attachments/assets/b1dbe256-6418-434a-9110-2f4f51e8a244)
 ---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
