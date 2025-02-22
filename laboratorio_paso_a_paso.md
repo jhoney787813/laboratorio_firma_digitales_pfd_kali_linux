@@ -142,6 +142,8 @@ Se validan verificando la firma de la autoridad certificadora, la fecha de expir
 
 ✔ SHA-256, SHA-384, SHA-512 (para la función hash)
 
+[🔎 Ver-> Explicación, Practica para cada algoritmo]()
+
 
 ## Conclusión
 El uso de firmas digitales y certificados garantiza la seguridad de los documentos electrónicos, permitiendo verificar su autenticidad y proteger la información contra modificaciones no autorizadas.
