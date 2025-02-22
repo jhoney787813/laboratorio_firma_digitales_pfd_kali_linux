@@ -98,5 +98,41 @@ Si la salida anterior es exitosa saldra:
     Verified OK
 ```
 Si el documento fue modificado la **verificación fallara!**
+
+## 🔎 3. Validación con SHA-256 (Función Hash)
+
+*SHA-256* es una función de hash criptográfico utilizada para garantizar la integridad del contenido de un certificado. No cifra ni firma, sino que genera un resumen único del contenido.
+
+### 📌 Ejemplo práctico: Crear y validar un hash SHA-256
+
+#### Paso 1: Generar el hash de un documento
+
+```bash
+  sha256sum documento.txt > hash_original.txt
+```
+
+#### Paso 2: Verificar si el documento fue alterado
+
+Si alguien modifica documento.txt, generamos el nuevo hash y lo comparamos con el original:
+
+```bash
+  sha256sum documento.txt
+  cat hash_original.txt
+```
+**Nota:** Si los hashes son diferentes, significa que el documento ha sido alterado.
+
+
+
+
+
+## 🚀 Consideraciones Importantes
+
+**RSA** y **ECDSA** se usan para firmar y verificar certificados digitales.
+**SHA-256** permite garantizar la integridad del documento.
+Estos algoritmos combinados permiten validar certificados de manera segura.
+
+
+##### Espero estos cortos ejemplos ¡Te ayuden a comprender cómo funciona la validación de certificados digitales en la práctica! 🚀
+
 ---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
