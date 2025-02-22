@@ -21,5 +21,7 @@ Este laboratorio demostrará cómo firmar un documento PDF usando herramientas d
 🌐 ¿Sabías que la autentiticidad de tus archivos es importate para detectar fraudes? En este video, aplicaremos mecanismos de firma de documentos electronicos, utilizados hoy en día por muchas industrias para garantizar la integridad y autenticidad de los archivos. 💻
 [-> Video Completo de práctica](https://www.youtube.com/watch?v=Gt7tuk75hMI)
 
+
+ ![perrito](https://github.com/user-attachments/assets/65668f71-ad48-41ff-8678-b942d417f687)
 ---
 [Jhon E -> GitHub Profile](https://github.com/jhoney787813/)
