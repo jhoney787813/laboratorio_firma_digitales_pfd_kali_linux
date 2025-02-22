@@ -137,11 +137,46 @@ Se validan verificando la firma de la autoridad certificadora, la fecha de expir
 🔹 Los algoritmos más comunes son:
 
 
-✔ RSA (Rivest-Shamir-Adleman)
+✔ **RSA (Rivest-Shamir-Adleman):** RSA es un algoritmo de cifrado asimétrico ampliamente utilizado para firmas digitales y seguridad en comunicaciones. Fue desarrollado en 1977 por Ron Rivest, Adi Shamir y Leonard Adleman, y se basa en la dificultad de factorizar números primos grandes, lo que lo hace altamente seguro.
 
-✔ ECDSA (Elliptic Curve Digital Signature Algorithm)
+##### 🎯 ¿Dónde se usa RSA?
 
-✔ SHA-256, SHA-384, SHA-512 (para la función hash)
+📜 Firmas Digitales y Certificados Electrónicos
+🔑 Autenticación en Sistemas y Dispositivos
+🔐 Cifrado de Datos y Comunicaciones Seguras
+
+RSA es un pilar en la seguridad informática moderna. Su uso en firmas digitales, cifrado de datos, autenticación y blockchain garantiza privacidad y confianza en sistemas críticos. Sin embargo, es más lento que otros métodos modernos como ECC (Elliptic Curve Cryptography), por lo que en algunos casos se prefiere ECDSA. 🚀
+
+
+
+
+✔ **ECDSA (Elliptic Curve Digital Signature Algorithm):** ECDSA es una variante de firma digital basada en criptografía de curvas elípticas. Es más eficiente que RSA porque ofrece la misma seguridad con claves más pequeñas.
+
+##### 🎯 ¿Dónde se usa ECDSA?
+
+🔑 Bitcoin y criptomonedas: Para firmar transacciones.
+
+🔐 TLS/SSL (HTTPS): Para conexiones seguras en navegadores web.
+
+📜 SSH: Para autenticación en servidores.
+
+📱 Dispositivos IoT: Gracias a su eficiencia en consumo de recursos.
+
+ **ECDSA** es preferido en sistemas modernos por su seguridad con claves más cortas y su eficiencia en comparación con RSA. 🚀
+
+
+✔ **SHA-256, SHA-384, SHA-512 (para la función hash):** permiten garantizar la integridad del documento.
+
+##### 🎯 ¿Dónde se usa SHA-?
+
+🔐 Almacenamiento Seguro de Contraseñas
+
+🔑 Verificación de Integridad de Archivos
+
+📜  Protocolos de Seguridad (TLS, VPN, SSH)
+
+Las funciones **SHA-256, SHA-384 y SHA-512** son fundamentales en seguridad informática. Se usan en firmas digitales, almacenamiento de contraseñas, blockchain, verificación de archivos y protocolos de seguridad. Son herramientas esenciales para garantizar la integridad y autenticidad de los datos en la era digital. 🚀
+
 
 [🔎 Ver-> Explicación, Practica para cada algoritmo](https://github.com/jhoney787813/laboratorio_firma_digitales_pfd_kali_linux/blob/main/practica_algoritmos_clave_publica.md)
 
