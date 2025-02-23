@@ -83,6 +83,87 @@ gpg --import clave_publica.asc
 Esto permitirá verificar la firma en otro dispositivo de manera segura.
 
 
+# **Aplicación del Certificado Digital en el Laboratorio**
+
+En el laboratorio, usamos **GPG (GNU Privacy Guard)** para generar claves criptográficas y firmar documentos digitalmente. Sin embargo, si queremos llevar la seguridad un paso más allá y hacer que la firma digital sea verificable de manera confiable por terceros, necesitamos aplicar un **certificado digital** emitido por una **Autoridad Certificadora (CA)**.
+
+## **📌 Pasos para Aplicar un Certificado Digital en el Laboratorio**
+
+### **1️⃣ Generar un Certificado Digital con OpenSSL**
+Si no tienes un certificado emitido por una CA oficial, puedes crear un **certificado autofirmado** para probar el proceso:
+
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout mi_clave_privada.pem -out mi_certificado.pem -days 365
+```
+
+### **Explicación:**
+✔️ `-x509`: Genera un certificado X.509 autofirmado.  
+✔️ `-newkey rsa:4096`: Crea una nueva clave RSA de 4096 bits.  
+✔️ `-keyout mi_clave_privada.pem`: Guarda la clave privada en un archivo.  
+✔️ `-out mi_certificado.pem`: Guarda el certificado en formato PEM.  
+✔️ `-days 365`: Define la validez del certificado por 1 año.  
+
+Una vez generado, este **certificado digital** se puede usar para firmar documentos y validar la identidad del firmante.
+
+---
+
+### **2️⃣ Usar el Certificado para Firmar Digitalmente un Documento PDF**
+Si en lugar de GPG queremos aplicar una firma con un certificado digital, podemos utilizar `openssl`:
+
+```bash
+openssl smime -sign -in documento.pdf -binary -outform DER -out documento_firmado.p7s -signer mi_certificado.pem -inkey mi_clave_privada.pem
+```
+
+### **Explicación:**
+✔️ `-sign`: Indica que queremos firmar el documento.  
+✔️ `-in documento.pdf`: Archivo de entrada a firmar.  
+✔️ `-binary`: Mantiene el formato binario del archivo.  
+✔️ `-outform DER`: Usa el formato DER para la firma.  
+✔️ `-out documento_firmado.p7s`: Guarda la firma en un archivo `.p7s`.  
+✔️ `-signer mi_certificado.pem`: Usa el certificado para firmar.  
+✔️ `-inkey mi_clave_privada.pem`: Especifica la clave privada para firmar.  
+
+Este método genera un archivo **documento_firmado.p7s**, que contiene la firma digital basada en el certificado.
+
+---
+
+### **3️⃣ Validar la Firma Digital con el Certificado**
+Una vez firmado el documento, cualquier persona con acceso a nuestro **certificado público** puede verificar la firma:
+
+```bash
+openssl smime -verify -in documento_firmado.p7s -inform DER -content documento.pdf -CAfile mi_certificado.pem
+```
+
+### **Explicación:**
+✔️ `-verify`: Indica que queremos verificar la firma.  
+✔️ `-in documento_firmado.p7s`: Especifica el archivo con la firma.  
+✔️ `-inform DER`: Define el formato DER para la firma.  
+✔️ `-content documento.pdf`: Archivo original para comparar.  
+✔️ `-CAfile mi_certificado.pem`: Certificado usado para validar la firma.  
+
+Si la firma es válida, el sistema mostrará un mensaje confirmando la autenticidad del documento.
+
+---
+
+### **4️⃣ Distribuir la Clave Pública para Validación**
+Para que otros usuarios puedan verificar nuestras firmas digitales, debemos compartir nuestro **certificado público**, sin revelar la clave privada:
+
+```bash
+openssl x509 -in mi_certificado.pem -out mi_certificado_publico.pem
+```
+
+Los destinatarios pueden importar este certificado en sus sistemas y verificar la autenticidad de nuestros documentos firmados.
+
+
+### **🔍 Conclusión de Certificado Digital con OpenSSL**
+
+✅ **Diferencia con GPG:** Mientras que GPG usa un modelo de **confianza basada en claves públicas y privadas**, los certificados digitales permiten que una **tercera entidad confiable (CA)** valide nuestra identidad.  
+✅ **Aplicación en el laboratorio:** Se usa para firmar documentos con mayor seguridad y permitir la verificación externa sin necesidad de importar claves manualmente.  
+✅ **Escalabilidad:** Este enfoque es utilizado en entornos corporativos, firmas electrónicas de contratos y comunicaciones seguras en internet (HTTPS, correos cifrados, etc.).  
+
+Con esto, llevamos nuestro laboratorio a un nivel más avanzado, aplicando criptografía asimétrica con certificados digitales. 🚀
+
+
 
 ## 📚 Preguntas y Respuestas
 
