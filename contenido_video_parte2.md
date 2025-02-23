@@ -2,97 +2,109 @@
 
 ## 🏁 Comienzo – Saludo y Presentación
 
-“¡Hola a todos! Bienvenidos a este laboratorio práctico donde aprenderemos a aplicar un certificado digital en Kali Linux para firmar y validar documentos electrónicos.
+## 📚 Resumen del Laboratorio Anterior
+¡Hola a todos! Bienvenidos!
 
-Hoy exploraremos no solo la implementación técnica, sino también su importancia en la seguridad digital, garantizando la autenticidad, integridad y no repudio de la información.
+En la primera parte de este laboratorio, exploramos el proceso de firma digital de documentos en Kali Linux. Aprendimos a generar claves GPG, firmar archivos PDF y verificar la autenticidad e integridad de los documentos mediante firmas digitales. También simulamos modificaciones en los documentos para entender cómo la firma digital detecta cambios no autorizados.
 
-Así que si te interesa la criptografía aplicada y la protección de documentos digitales, quédate hasta el final porque vamos a hacer una demostración completa, paso a paso.”
+Hoy exploraremos no solo la implementación técnica, sino también su importancia en la seguridad digital.
 
-## 📅 Introducción a los Certificados Digitales
+Ahora, daremos un paso adelante y veremos cómo aplicar un certificado digital, que permite validar y autenticar la identidad del firmante a través de una infraestructura de clave pública (PKI). ¡Comencemos!
 
-"Antes de entrar en la práctica, respondamos una pregunta clave: ¿qué es un certificado digital y por qué es importante?
+---
 
-Un certificado digital es un documento electrónico emitido por una Autoridad Certificadora (CA) que asocia una clave pública con la identidad de una persona, organización o entidad.
+## 🎥 Introducción: Importancia del Certificado Digital
 
-Los certificados digitales desempeñan un papel clave en la firma digital, ya que permiten:
+"Para garantizar la autenticidad y validez de una firma digital, necesitamos un certificado digital.
 
-✅ Garantizar la autenticidad del firmante.
-✅ Verificar la integridad del documento.
-✅ Evitar el repudio del remitente.
+Pero, ¿qué es exactamente un certificado digital?
 
-Ahora, veamos cómo implementarlo en un entorno de laboratorio con Kali Linux.”
+Es un documento electrónico emitido por una Autoridad Certificadora (CA) que vincula una clave pública con la identidad de su propietario. Con este certificado, podemos comprobar que la firma digital pertenece realmente a quien dice ser, fortaleciendo la seguridad y confianza en la comunicación digital."
 
-## ⚙️ Paso 1: Instalación de Herramientas en Kali Linux
+---
 
-"Para aplicar un certificado digital, necesitamos algunas herramientas esenciales. Si aún no las tienes instaladas, usa los siguientes comandos:
+## 🛠️ Instalación del Certificado Digital
 
-### Actualización del sistema:
-```bash
-sudo apt update && sudo apt upgrade -y
-```
+"Para aplicar un certificado digital en Kali Linux, seguimos estos pasos:
 
-### Instalación de GPG y OpenSSL:
-```bash
-sudo apt install gnupg openssl -y
-```
+### 1. Descargar el Certificado Digital
+   - Si el certificado proviene de una Autoridad Certificadora, lo descargamos en formato `.crt` o `.pem`.
+   - Si es un certificado personal generado en GPG, lo exportamos con:
+     ```bash
+     gpg --export -a "Tu Nombre" > certificado_publico.asc
+     ```
 
-### Instalación de LibreOffice para la generación de documentos PDF:
-```bash
-sudo apt install libreoffice -y
-```
+### 2. Importar el Certificado Digital
+   - Para importar un certificado GPG, usamos:
+     ```bash
+     gpg --import certificado_publico.asc
+     ```
+   - Para agregar un certificado X.509 a nuestro sistema:
+     ```bash
+     sudo cp certificado.crt /usr/local/share/ca-certificates/
+     sudo update-ca-certificates
+     ```
 
-Con esto, estamos listos para generar y aplicar nuestro certificado digital."
+### 3. Verificar la Instalación del Certificado
+   - Para comprobar que el certificado está instalado correctamente, usamos:
+     ```bash
+     gpg --list-keys
+     ```
+   - En sistemas con certificados X.509, verificamos con:
+     ```bash
+     openssl x509 -in certificado.crt -text -noout
+     ```
 
-## 📄 Paso 2: Generación de un Certificado Digital Autofirmado
+---
 
-"Para generar un certificado digital autofirmado, utilizaremos OpenSSL. Ejecutemos el siguiente comando:
+## 🔒 Aplicación del Certificado Digital en la Firma Digital
 
-```bash
-openssl req -x509 -newkey rsa:4096 -keyout mi_clave_privada.pem -out mi_certificado.pem -days 365
-```
+"Una vez que tenemos el certificado digital instalado, podemos usarlo para firmar documentos de forma autenticada.
 
-Este comando genera:
-- Un archivo `mi_clave_privada.pem` con la clave privada.
-- Un archivo `mi_certificado.pem` que es el certificado digital.
+### 1. Firmar un Documento PDF con el Certificado Digital
+   ```bash
+   gpg --detach-sign --armor --output documento.pdf.sig documento.pdf
+   ```
 
-Durante la generación, se nos pedirá ingresar algunos datos, como el nombre de la organización, el país y el correo electrónico."
+### 2. Validar la Firma con el Certificado
+   ```bash
+   gpg --verify documento.pdf.sig documento.pdf
+   ```
+   - Si el certificado es válido, el sistema mostrará la información del firmante y confirmará la integridad del documento.
 
-## 📝 Paso 3: Creación de un Documento y Conversión a PDF
+### 3. Compartir el Documento y el Certificado
+   - Para que otros usuarios puedan validar la firma, exportamos el certificado y lo compartimos junto con el documento firmado.
+   ```bash
+   gpg --export -a "Tu Nombre" > certificado_publico.asc
+   ```
 
-"Ahora, creamos un documento de prueba y lo convertimos a PDF:
+---
 
-```bash
-echo "Este es un documento firmado digitalmente" > documento.txt
-libreoffice --convert-to pdf documento.txt
-```
+## 🔧 Prueba de Validación en Otro Equipo
 
-Esto generará un archivo `documento.pdf`, que usaremos para la firma digital."
+"Para comprobar la autenticidad en otro equipo:
 
-## ✍️ Paso 4: Firma Digital del Documento con el Certificado Digital
+1. Importamos el certificado del firmante:
+   ```bash
+   gpg --import certificado_publico.asc
+   ```
+2. Verificamos la firma digital del documento recibido:
+   ```bash
+   gpg --verify documento.pdf.sig documento.pdf
+   ```
+   - Si el certificado es reconocido, la firma será válida.
+   - Si no es reconocido, se nos advertirá sobre un certificado desconocido."
 
-"Para firmar el documento con nuestro certificado digital, usamos:
+---
 
-```bash
-openssl smime -sign -in documento.pdf -out documento_firmado.pdf -signer mi_certificado.pem -inkey mi_clave_privada.pem -outform DER
-```
+## 📊 Conclusión
 
-Este comando genera `documento_firmado.pdf`, que incluye la firma digital basada en nuestro certificado."
+"En este laboratorio hemos aprendido a instalar y aplicar un certificado digital para firmar y verificar documentos. La combinación de firmas digitales y certificados garantiza la seguridad, autenticidad e integridad de la información en entornos digitales modernos.
 
-## 🔍 Paso 5: Validación de la Firma Digital
+En un mundo donde la confianza digital es clave, el uso de estas tecnologías nos permite proteger documentos, autenticar usuarios y prevenir manipulaciones no autorizadas.
 
-"Para verificar que la firma es válida, usamos:
+👌 Si te gustó este laboratorio, no olvides compartirlo y suscribirte para más contenido sobre seguridad y criptografía.
 
-```bash
-openssl smime -verify -in documento_firmado.pdf -CAfile mi_certificado.pem
-```
+👉️ ¡Nos vemos en el próximo laboratorio!"
 
-Si la firma es válida, el sistema indicará que la autenticidad del documento está garantizada."
-
-## 🌟 Conclusión y Reflexión Final
-
-"Con esto, hemos aprendido a generar y aplicar un certificado digital en Kali Linux, firmar documentos y validar su autenticidad. Este proceso es fundamental para la seguridad de la información en entornos digitales.
-
-La pregunta clave es: ¿Están las empresas garantizando la autenticidad e integridad de sus documentos? Implementar criptografía asimétrica y certificados digitales no solo es una mejor práctica, sino una necesidad en los sistemas modernos.
-
-Si este laboratorio te fue útil, no olvides compartirlo y suscribirte para más contenido sobre ciberseguridad y criptografía. ¡Nos vemos en el próximo laboratorio!"
 
