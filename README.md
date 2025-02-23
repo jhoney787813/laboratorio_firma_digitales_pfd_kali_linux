@@ -17,8 +17,11 @@ Este laboratorio demostrará cómo firmar un documento PDF usando herramientas d
 [-> Ver Laboratorio Paso a Paso ](https://github.com/jhoney787813/laboratorio_firma_digitales_pfd_kali_linux/blob/main/laboratorio_paso_a_paso.md)
 
 
-🌐 ¿Sabías que la autentiticidad de tus archivos es importate para detectar fraudes? En este video, aplicaremos mecanismos de firma de documentos electronicos, utilizados hoy en día por muchas industrias para garantizar la integridad y autenticidad de los archivos. 💻
-[-> Video Completo de práctica](https://youtu.be/0KUAuPT0T2w)
+🌐 ¿Sabías que la autentiticidad de tus archivos es importate para detectar fraudes? En este video, aplicaremos mecanismos de firma de documentos electronicos, utilizados hoy en día por muchas industrias para garantizar la integridad y autenticidad de los archivos. 
+
+💻[-> Video Completo de práctica Parte I](https://youtu.be/0KUAuPT0T2w)
+
+💻[-> Video Completo de práctica Parte II](https://youtu.be/zc03g59H0BQ)
 
 ![bannerFirmaDigital_pequena](https://github.com/user-attachments/assets/e324f398-6887-4725-869c-f31ab3a71227)
 
