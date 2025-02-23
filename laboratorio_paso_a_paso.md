@@ -223,7 +223,9 @@ Se validan verificando la firma de la autoridad certificadora, la fecha de expir
 ##### 🎯 ¿Dónde se usa RSA?
 
 📜 Firmas Digitales y Certificados Electrónicos
+
 🔑 Autenticación en Sistemas y Dispositivos
+
 🔐 Cifrado de Datos y Comunicaciones Seguras
 
 RSA es un pilar en la seguridad informática moderna. Su uso en firmas digitales, cifrado de datos, autenticación y blockchain garantiza privacidad y confianza en sistemas críticos. Sin embargo, es más lento que otros métodos modernos como ECC (Elliptic Curve Cryptography), por lo que en algunos casos se prefiere ECDSA. 🚀
